@@ -15,3 +15,12 @@ $ stack repl --resolver=ghc-8.2.1 --ghci-options="-XRebindableSyntax" src/Educat
 ```bash
 $ ghci -XRebindableSyntax EducationalPrelude.hs
 ```
+
+## サポートしている型
+
+- `Bool`
+- `Char`
+- `Int`
+- `Double`
+- `[a]`
+- `(a, b)`
