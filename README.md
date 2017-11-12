@@ -6,11 +6,19 @@
 
 ## 実行方法
 
+### プロジェクトのルートで実行する場合
+
+```bash
+$ stack repl src/EducationalPrelude.hs
+```
+
+### stack を使う場合
+
 ```bash
 $ stack repl --resolver=ghc-8.2.1 --ghci-options="-XRebindableSyntax" src/EducationalPrelude.hs
 ```
 
-または
+### ghc を使う場合
 
 ```bash
 $ ghci -XRebindableSyntax EducationalPrelude.hs
