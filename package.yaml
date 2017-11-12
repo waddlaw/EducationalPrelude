@@ -1,0 +1,21 @@
+name:                EducationalPrelude
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/githubuser/EducationalPrelude#readme
+license:             BSD3
+author:              waddlaw
+maintainer:          example@example.com
+copyright:           2017 waddlaw
+category:            Web
+extra-source-files:
+- README.md
+
+dependencies:
+  - base >= 4.7 && < 5
+  - ghc-prim
+
+executables:
+  vanilla-ghc:
+    source-dirs:      src
+    main:             Main.hs
