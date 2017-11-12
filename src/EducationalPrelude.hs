@@ -8,7 +8,6 @@ import Prelude as Import
   , (++), (!!), head, tail, last, init, reverse, take, drop
   , cycle, repeat, replicate
   , fst, snd, zip
-  , (+), (*), (-)   -- ^ Num
   , (/)             -- ^ Fractional
   , (==), (/=)      -- ^ Eq
   , (>), (>=), (<), min, max   -- ^ Ord
@@ -16,13 +15,24 @@ import Prelude as Import
   , div, mod             -- ^ Integral
   )
 import qualified Prelude as P
-  ( null, length, maximum, minimum, elem, sum, product         -- ^ Foldable
+  ( (+), (*), (-)   -- ^ Num
+  , null, length, maximum, minimum, elem, sum, product         -- ^ Foldable
   , fromInteger, Integer, fromIntegral
   , odd, (^)
   , Eq, Num, Ord
   , Rational, fromRational, fromInteger
   )
 import Data.Bool (bool)
+
+-- 優先度
+infixl 6 +, -
+infixl 7 *
+
+-- | Num
+(+), (*), (-) :: P.Num 数値の型 => 数値の型 -> 数値の型 -> 数値の型
+(+) = (P.+)
+(*) = (P.*)
+(-) = (P.-)
 
 -- | Foldable
 null :: [任意の型] -> Bool
