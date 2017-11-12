@@ -1,10 +1,6 @@
 {-# LANGUAGE NoImplicitPrelude #-}
 
 module EducationalPrelude () where
-  -- ( (NoPrelude.+), (NoPrelude.-), (NoPrelude.*)
-  -- , (NoPrelude.==)
-  -- , module Import
-  -- ) where
 
 import Prelude as Import
   ( Int, Char, Bool(..), Double
@@ -12,59 +8,21 @@ import Prelude as Import
   , (++), (!!), head, tail, last, init, reverse, take, drop
   , cycle, repeat, replicate
   , fst, snd, zip
-  )
-import qualified Prelude as P
-  ( (+), (*), (-)   -- ^ Num
+  , (+), (*), (-)   -- ^ Num
   , (/)             -- ^ Fractional
   , (==), (/=)      -- ^ Eq
   , (>), (>=), (<), min, max   -- ^ Ord
   , succ            -- ^ Enum
   , div, mod             -- ^ Integral
-  , null, length, maximum, minimum, elem, sum, product         -- ^ Foldable
+  )
+import qualified Prelude as P
+  ( null, length, maximum, minimum, elem, sum, product         -- ^ Foldable
   , fromInteger, Integer, fromIntegral
-  , fromRational, Rational
   , odd, (^)
+  , Eq, Num, Ord
+  , Rational, fromRational, fromInteger
   )
 import Data.Bool (bool)
-
--- 優先度
-infix 4 ==, /=, >, >=, <
-infixl 6 +, -
-infixl 7 *, /
-infixr 8 ^
-
--- | Num
-(+), (*), (-) :: Int -> Int -> Int
-(+) = (P.+)
-(*) = (P.*)
-(-) = (P.-)
-
--- | Fractional
-(/) :: Int -> Int -> Double
-a / b = P.fromIntegral a P./ P.fromIntegral b
-
--- | Integral
-div, mod :: Int -> Int -> Int
-div = P.div
-mod = P.mod
-
--- | Eq
-(==), (/=) :: Int -> Int -> Bool
-(==) = (P.==)
-(/=) = (P./=)
-
--- | Ord
-(>), (>=), (<) :: Int -> Int -> Bool
-(>) = (P.>)
-(>=) = (P.>=)
-(<) = (P.<)
-min, max :: Int -> Int -> Int
-min = P.min
-max = P.max
-
--- | Enum
-succ :: Int -> Int
-succ = P.succ
 
 -- | Foldable
 null :: [a] -> Bool
@@ -73,15 +31,15 @@ null = P.null
 length :: [a] -> Int
 length = P.length
 
-maximum, minimum :: [Int] -> Int
+maximum, minimum :: P.Ord a => [a] -> a
 maximum = P.maximum
 minimum = P.minimum
 
-sum, product :: [Int] -> Int
+sum, product :: P.Num a => [a] -> a
 sum = P.sum
 product = P.product
 
-elem :: Int -> [Int] -> Bool 
+elem :: P.Eq a => a -> [a] -> Bool 
 elem = P.elem
 
 -- |
@@ -103,5 +61,5 @@ ifThenElse b x y = bool y x b
 odd :: Int -> Bool
 odd = P.odd
 
-(^) :: Int -> Int -> Int
+(^) :: P.Num a => a -> Int -> a
 (^) = (P.^)
