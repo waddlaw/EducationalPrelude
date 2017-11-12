@@ -12,12 +12,6 @@ $ stack repl --resolver=ghc-8.2.1 --ghci-options="-XRebindableSyntax" src/Educat
 $ ghci -XRebindableSyntax EducationalPrelude.hs
 ```
 
-## 考えられる手法
-
-1. MyPrelude を定義する
-2. MyGHCi を実装する
-3. vanilla GHC を実装する
-
 ## 課題
 
 ### `Eq` の比較をどうするか
