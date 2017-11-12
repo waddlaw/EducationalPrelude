@@ -25,21 +25,21 @@ import qualified Prelude as P
 import Data.Bool (bool)
 
 -- | Foldable
-null :: [a] -> Bool
+null :: [任意の型] -> Bool
 null = P.null
 
-length :: [a] -> Int
+length :: [任意の型] -> Int
 length = P.length
 
-maximum, minimum :: P.Ord a => [a] -> a
+maximum, minimum :: P.Ord 順序のある型 => [順序のある型] -> 順序のある型
 maximum = P.maximum
 minimum = P.minimum
 
-sum, product :: P.Num a => [a] -> a
+sum, product :: P.Num 数値の型 => [数値の型] -> 数値の型
 sum = P.sum
 product = P.product
 
-elem :: P.Eq a => a -> [a] -> Bool 
+elem :: P.Eq 等価性の判定ができる型 => 等価性の判定ができる型 -> [等価性の判定ができる型] -> Bool 
 elem = P.elem
 
 -- |
@@ -55,11 +55,11 @@ fromRational :: P.Rational -> Double
 fromRational = P.fromRational
 
 -- | if ... then ... else の際に呼ばれる
-ifThenElse :: Bool -> a -> a -> a
+ifThenElse :: Bool -> 任意の型 -> 任意の型 -> 任意の型
 ifThenElse b x y = bool y x b
 
 odd :: Int -> Bool
 odd = P.odd
 
-(^) :: P.Num a => a -> Int -> a
+(^) :: P.Num 数値の型 => 数値の型 -> Int -> 数値の型
 (^) = (P.^)
