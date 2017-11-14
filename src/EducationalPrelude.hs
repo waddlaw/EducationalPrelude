@@ -14,13 +14,13 @@ import Prelude as Import
   , (>), (>=), (<), min, max   -- ^ Ord
   , succ            -- ^ Enum
   , div, mod             -- ^ Integral
+  , fromInteger, fromRational, Rational
+  , odd, (^)
   )
 import qualified Prelude as P
   ( null, length, maximum, minimum, elem, sum, product         -- ^ Foldable
   , fromInteger, Integer, fromIntegral
-  , odd, (^)
   , Eq, Num, Ord
-  , Rational, fromRational, fromInteger
   )
 import Data.Bool (bool)
 
@@ -42,24 +42,6 @@ product = P.product
 elem :: P.Eq a => a -> [a] -> Bool 
 elem = P.elem
 
--- |
--- :t 1 を Int にするために必要
--- :t 1 は :t fromInteger 1 と同じ
-fromInteger :: P.Integer -> Int
-fromInteger = P.fromInteger
-
--- |
--- :t 1.0 を Double にするために必要
--- :t 1.0 は :t fromRational 1.0 と同じ
-fromRational :: P.Rational -> Double
-fromRational = P.fromRational
-
 -- | if ... then ... else の際に呼ばれる
 ifThenElse :: Bool -> a -> a -> a
 ifThenElse b x y = bool y x b
-
-odd :: Int -> Bool
-odd = P.odd
-
-(^) :: P.Num a => a -> Int -> a
-(^) = (P.^)
