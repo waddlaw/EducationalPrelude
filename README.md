@@ -4,6 +4,31 @@
 
 すごい Haskell 楽しく学ぼうの1章に出てくる関数およびデータ型を全て網羅する。
 
+## ビルド方法
+
+`EducationalPrelude` リポジトリのクローン。
+
+```bash
+$ git clone --recursive git@github.com:waddlaw/EducationalPrelude.git
+```
+
+`ghc` リポジトリのクローン。
+
+```bash
+$ cd EducationalPrelude/ghc/
+```
+
+### GHC のビルドとインストール
+
+```bash
+$ cd ghc
+$ cp mk/build.mk.sample mk/build.mk
+$ ./boot
+$ ./configure
+$ make -j
+$ sudo make install
+```
+
 ## 実行方法
 
 ### プロジェクトのルートで実行する場合
