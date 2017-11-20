@@ -9,14 +9,7 @@
 `EducationalPrelude` リポジトリのクローン。
 
 ```bash
-$ git config --global url."git://github.com/ghc/packages-".insteadOf git://github.com/waddlaw/packages/
 $ git clone --recursive git@github.com:waddlaw/EducationalPrelude.git
-```
-
-`ghc` リポジトリのクローン。
-
-```bash
-$ cd EducationalPrelude/ghc/
 ```
 
 ### GHC のビルドとインストール
