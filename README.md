@@ -9,7 +9,7 @@
 `EducationalPrelude` リポジトリのクローン。
 
 ```bash
-$ git clone --recursive git@github.com:waddlaw/EducationalPrelude.git
+$ git clone --recursive https://github.com/waddlaw/EducationalPrelude.git
 ```
 
 ### GHC のビルドとインストール
