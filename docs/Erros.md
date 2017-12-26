@@ -1,5 +1,7 @@
 # ./boot で発生した警告
 
+- [debian でロケールのエラーが出るときの対処法](https://qiita.com/d6rkaiz/items/c32f2b4772e25b1ba3ba)
+
 ## 直し方
 
 ```shell
