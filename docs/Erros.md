@@ -1,4 +1,23 @@
-# ./boot で発生したエラー
+# ./boot で発生した警告
+
+## 直し方
+
+```shell
+$ export LANG=en_US.UTF-8
+$ export LC_ALL=$LANG
+
+$ sudo locale-gen --purge $LANG
+Generating locales (this might take a while)...
+  en_US.UTF-8... done
+Generation complete.
+
+$ sudo dpkg-reconfigure -f noninteractive locales && sudo /usr/sbin/update-locale LANG=$LANG LC_ALL=$LANG
+Generating locales (this might take a while)...
+  en_US.UTF-8... done
+Generation complete.
+```
+
+## エラー内容
 
 ```shell
 $ ./boot
