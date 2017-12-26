@@ -4,6 +4,16 @@
 
 すごい Haskell 楽しく学ぼうの1章に出てくる関数およびデータ型を全て網羅する。
 
+## 環境
+
+```shell
+$ stack --version
+Version 1.6.3, Git revision b27e629b8c4ce369e3b8273f04db193b060000db (5454 commits) x86_64 hpack-0.20.0
+
+$ stack exec -- ghc --version
+The Glorious Glasgow Haskell Compilation System, version 8.2.1.20171120
+```
+
 ## ビルド方法
 
 `EducationalPrelude` リポジトリのクローン。
